@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap');
+
+:root {
+    --fheight: 40px;
+    --communistcensorship: 0px;
+}
+
+body {
+    background-color: #131313;
+}
+
+* {
+    font-family: 'Domine', serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: white;
+}
+
+h1 {
+    font-size: 27px;
+}
+
+.center {
+    margin: auto;
+    width: 70%;
+    max-width: 70%;
+    min-width: 70%;  
+    padding: 10px;
+}
+
+.allowblur {
+    filter: blur(var(--communistcensorship));
+}
+
+.content {
+    padding: 5px;
+    padding-bottom: 15px;
+    max-width: 90%;
+    word-wrap: break-word;
+    margin: auto;
+}
+
+.content * {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.text {
+    white-space: pre-line;
+    word-wrap: break-word;
+}
+
+
+
+.projects {
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: #1b1b1b;
+    height: 135px;
+    width: 100%;
+    border-radius: 5px;
+    border-width: 0px;
+}
+
+.project {
+
+}
