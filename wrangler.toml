@@ -1,0 +1,11 @@
+name = "rat-pink"
+type = "javascript"
+
+[site]
+bucket = "."
+entry-point = "./functions"
+
+[env.production]
+workers_dev = false
+route = "rat.pink/*"
+zone_id = "your-zone-id"

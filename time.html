@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            font-size: 5vw !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <h1 id="time">Wait.</h1>
+        <hr>
+        <div class="content">
+            <p>
+                Soon.
+
+
+            </p>
+        </div>
+    </div>
+</body>
+<script>
+    const unixTimestamp = 1738239362513;
+    setInterval(function () {
+        const unixTimestamp = 1738239214513; // Example Unix timestamp
+
+        // Get the current time in milliseconds since Unix epoch
+        const currentTime = Date.now();
+        let timeElapsed = currentTime - unixTimestamp;
+        const hoursElapsed = Math.floor(timeElapsed / (1000 * 60 * 60));
+        timeElapsed %= (1000 * 60 * 60);
+        const minutesElapsed = Math.floor(timeElapsed / (1000 * 60));
+        timeElapsed %= (1000 * 60);
+        const secondsElapsed = Math.floor(timeElapsed / 1000);
+        const millisecondsElapsed = timeElapsed % 1000;
+
+        console.log(`Time elapsed: ${hoursElapsed}h ${minutesElapsed}m ${secondsElapsed}s ${millisecondsElapsed}ms`);
+
+        let element = document.getElementById("time");
+        element.innerHTML =
+            hoursElapsed +
+            ' Hours, ' + minutesElapsed +
+            ' Minutes, ' + secondsElapsed +
+            ' Seconds'
+    }, 1000);
+</script>
+
+</html>
