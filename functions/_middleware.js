@@ -5,14 +5,15 @@ export async function onRequest(context) {
   if (url.pathname.includes(".wrangler")) {
     return new Response("go fuck yourself.");
   }
-  if (as === 10430 || as === 7922) {
-    if (url.pathname == "/") {
-      url.pathname = "/time.html"
-      return context.env.ASSETS.fetch(url);
-    }
+  if (url.pathname == "/") {
+    url.pathname = "/time.html"
+    return context.env.ASSETS.fetch(url);
+  }
+  /*if (as === 10430 || as === 7922) {
+
 
   } else {
     console.log(as);
-  }
+  }*/
   return context.env.ASSETS.fetch(url);
 }

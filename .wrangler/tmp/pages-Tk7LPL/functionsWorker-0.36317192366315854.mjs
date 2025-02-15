@@ -7,15 +7,11 @@ async function onRequest(context) {
   const as = context.request.cf.asn;
   console.log("hi! " + url.pathname);
   if (url.pathname.includes(".wrangler")) {
-    return new Response("go fuck yourself.");
+    return new Response("go fuck yourself.", 403);
   }
-  if (as === 10430 || as === 7922) {
-    if (url.pathname == "/") {
-      url.pathname = "/time.html";
-      return context.env.ASSETS.fetch(url);
-    }
-  } else {
-    console.log(as);
+  if (url.pathname == "/") {
+    url.pathname = "/time.html";
+    return context.env.ASSETS.fetch(url);
   }
   return context.env.ASSETS.fetch(url);
 }
@@ -519,7 +515,7 @@ var jsonError = /* @__PURE__ */ __name(async (request, env, _ctx, middlewareCtx)
 }, "jsonError");
 var middleware_miniflare3_json_error_default = jsonError;
 
-// .wrangler/tmp/bundle-quUKVi/middleware-insertion-facade.js
+// .wrangler/tmp/bundle-ncFZEB/middleware-insertion-facade.js
 var __INTERNAL_WRANGLER_MIDDLEWARE__ = [
   middleware_ensure_req_body_drained_default,
   middleware_miniflare3_json_error_default
@@ -551,7 +547,7 @@ function __facade_invoke__(request, env, ctx, dispatch, finalMiddleware) {
 }
 __name(__facade_invoke__, "__facade_invoke__");
 
-// .wrangler/tmp/bundle-quUKVi/middleware-loader.entry.ts
+// .wrangler/tmp/bundle-ncFZEB/middleware-loader.entry.ts
 var __Facade_ScheduledController__ = class {
   constructor(scheduledTime, cron, noRetry) {
     this.scheduledTime = scheduledTime;
