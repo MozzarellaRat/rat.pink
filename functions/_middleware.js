@@ -3,7 +3,7 @@ export async function onRequest(context) {
   const as = context.request.cf.asn;
   console.log("hi! " + url.pathname);
   if (url.pathname.includes(".wrangler")) {
-    return new Response("go fuck yourself.");
+    return new Response("go fuck yourself. :3");
   }
   if (url.pathname == "/") {
     url.pathname = "/time.html"
