@@ -18,8 +18,3 @@ Just kidding! haha!
 Hey VSuace, Micheal here.
 Your open security is great.. or is it?
 * dies *
-
-
-
-okay so like what should I add
-you should like tell me. "MozzarellaRat" on whatever platform.
