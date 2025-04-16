@@ -31,13 +31,18 @@
         }
 
         function setup() {
+            document.documentElement.style.height = "100%"; 
+            document.body.style.height = "100%";        
+            document.body.style.margin = "0";              
+
             e.style.height = "100%";
             e.style.width = "100%";
             k.style.margin = "auto";
             k.style.backgroundColor = "black";
             document.body.style.overflow = "hidden";
-            aud.pause();
             aud.currentTime = 0;
+
+            aud.play(); //take me to funky town
         }
 
         document.addEventListener("keydown", keypress);
@@ -62,7 +67,6 @@
                     break;
                 default:
             }
-            aud.play();
         }
 
         document.addEventListener("DOMContentLoaded", (event) => {
