@@ -41,8 +41,10 @@
             k.style.backgroundColor = "black";
             document.body.style.overflow = "hidden";
             aud.currentTime = 0;
-
-            aud.play(); //take me to funky town
+            if (aud.paused) {
+                aud.play();
+            }
+             //take me to funky town
         }
 
         document.addEventListener("keydown", keypress);
