@@ -13,21 +13,31 @@
         let aud = new Audio("https://media.memesoundeffects.com/2023/12/funky20town20low20quality.mp3");
 
         function chip() {
+            aud.src = "https://media.memesoundeffects.com/2023/12/funky20town20low20quality.mp3";
+            setup();
             e.src = "https://media.tenor.com/6CMUVBh0H-cAAAAC/chips-potato-chips.gif";
         }
         function china() {
+            aud.src = "https://media.memesoundeffects.com/2023/12/funky20town20low20quality.mp3";
+            setup();
             e.src = "https://media1.tenor.com/m/KjyDoVIomkcAAAAC/social-credit-social-credit-score.gif";
         }
         function guy() {
+            aud.src = "https://media.memesoundeffects.com/2023/12/funky20town20low20quality.mp3";
+            setup();
             e.src = "https://rat.pink/cdn/heyheyhey.gif";
         }
 
         function saul() {
+            aud.src = "https://rat.pink/cdn/saul.mp3";
+            setup();
             e.src = "https://media1.tenor.com/m/ZUy3LFGTfoUAAAAd/breaking-bad-saul-goodman.gif"
         }
 
         function cockroach() {
+            aud.src = "https://media.memesoundeffects.com/2023/12/funky20town20low20quality.mp3";
             e.src = "https://media.tenor.com/dlrH0miAxQUAAAAi/cockroach-dancing.gif";
+            setup();
         }
 
         function setup() {
@@ -40,17 +50,19 @@
             k.style.margin = "auto";
             k.style.backgroundColor = "black";
             document.body.style.overflow = "hidden";
-            aud.currentTime = 0;
             if (aud.paused) {
+                let time = aud.currentTime;
+                aud.load();
                 aud.play();
+                aud.currentTime = time;
             }
+            aud.loop = true;
              //take me to funky town
         }
 
         document.addEventListener("keydown", keypress);
 
         function keypress(e) {
-            setup();
             switch (e.key) {
                 case "1":
                     chip();
@@ -67,11 +79,15 @@
                 case "5":
                     china();
                     break;
+                case "K":
+                    setup();
+                    break;
                 default:
             }
         }
 
         document.addEventListener("DOMContentLoaded", (event) => {
+            aud.currentTime = 0;
             setup();
             chip();
         });
@@ -86,6 +102,11 @@
                 aud.play();
             }
         });
+
+        setTimeout(() => {
+            aud.load();
+            aud.play();
+        }, 4000);
 
 
     </script>
