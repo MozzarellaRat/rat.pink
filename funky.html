@@ -52,20 +52,28 @@
         }
         function monkeyspin() {
             aud.src = "https://rat.pink/cdn/m.mp3";
-            e.src = "https://media1.tenor.com/m/LSvaSkcz6UQAAAAd/happy-monkey-circle-happy.gif";
+            e.src = "https://rat.pink/cdn/f1.gif";
             setup();
+            setTimeout(() => {
+                img.src = "https://media1.tenor.com/m/LSvaSkcz6UQAAAAd/happy-monkey-circle-happy.gif";
+            }, 7000);
+            aud.addEventListener("ended", () => {
+                if (aud.src == "https://rat.pink/cdn/m.mp3") {
+                    monkeyspin();
+                }
+            });
         }
 
         function maxwell() {
-            let srcs = ["https://media.tenor.com/qqvVKCDu89cAAAAi/cat-silly.gif","https://media.tenor.com/T8SBWIfKcFQAAAAi/maxwell-cat.gif", "https://media.tenor.com/lfcGzm0HvOgAAAAi/maxwell-the-cat.gif", "https://media1.tenor.com/m/Jojpr9QgMLoAAAAd/maxwell-maxwell-spin.gif"];
+            let srcs = ["https://media.tenor.com/qqvVKCDu89cAAAAi/cat-silly.gif", "https://media.tenor.com/T8SBWIfKcFQAAAAi/maxwell-cat.gif", "https://media.tenor.com/lfcGzm0HvOgAAAAi/maxwell-the-cat.gif", "https://media1.tenor.com/m/Jojpr9QgMLoAAAAd/maxwell-maxwell-spin.gif"];
             let osrc = srcs[Math.floor(Math.random() * srcs.length)];
-            e.src = osrc; 
+            e.src = osrc;
         }
 
         function setup() {
-            document.documentElement.style.height = "100%"; 
-            document.body.style.height = "100%";        
-            document.body.style.margin = "0";              
+            document.documentElement.style.height = "100%";
+            document.body.style.height = "100%";
+            document.body.style.margin = "0";
 
             e.style.height = "100%";
             e.style.width = "100%";
@@ -79,7 +87,7 @@
                 aud.currentTime = time;
             }
             aud.loop = true;
-             //take me to funky town
+            //take me to funky town
         }
 
         document.addEventListener("keydown", keypress);
