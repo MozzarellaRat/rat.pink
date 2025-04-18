@@ -29,6 +29,12 @@
         }
 
         function saul() {
+            aud.src = "https://rat.pink/cdn/fullsaul.mp3";
+            setup();
+            e.src = "https://media1.tenor.com/m/ZUy3LFGTfoUAAAAd/breaking-bad-saul-goodman.gif"
+        }
+
+        function fsaul() {
             aud.src = "https://rat.pink/cdn/saul.mp3";
             setup();
             e.src = "https://media1.tenor.com/m/ZUy3LFGTfoUAAAAd/breaking-bad-saul-goodman.gif"
@@ -38,6 +44,23 @@
             aud.src = "https://media.memesoundeffects.com/2023/12/funky20town20low20quality.mp3";
             e.src = "https://media.tenor.com/dlrH0miAxQUAAAAi/cockroach-dancing.gif";
             setup();
+        }
+
+        function jschaltt() {
+            aud.src = "https://rat.pink/cdn/jschlatt singing aria math but i turned it into a beautiful drum and bass song.mp3";
+            e.src = "https://media1.tenor.com/m/2eOuDhQefs0AAAAd/jschlatt-aria-math-bathroom-he-sounds-just-like-aria-math-schlatt.gif";
+            setup();
+        }
+        function monkeyspin() {
+            aud.src = "https://rat.pink/cdn/m.mp3";
+            e.src = "https://media1.tenor.com/m/LSvaSkcz6UQAAAAd/happy-monkey-circle-happy.gif";
+            setup();
+        }
+
+        function maxwell() {
+            let srcs = ["https://media.tenor.com/qqvVKCDu89cAAAAi/cat-silly.gif","https://media.tenor.com/T8SBWIfKcFQAAAAi/maxwell-cat.gif", "https://media.tenor.com/lfcGzm0HvOgAAAAi/maxwell-the-cat.gif", "https://media1.tenor.com/m/Jojpr9QgMLoAAAAd/maxwell-maxwell-spin.gif", ""];
+            let osrc = a[Math.floor(Math.random() * a.length)];
+            e.src = osrc; 
         }
 
         function setup() {
@@ -63,6 +86,7 @@
         document.addEventListener("keydown", keypress);
 
         function keypress(e) {
+            e
             switch (e.key) {
                 case "1":
                     chip();
@@ -74,12 +98,24 @@
                     guy();
                     break;
                 case "4":
-                    saul();
+                    if (e.ctrlKey) {
+                        saul();
+                    } else {
+                        fsaul();
+                    }
                     break;
                 case "5":
                     china();
                     break;
-                case "K":
+                case "6":
+                    jschaltt();
+                    break;
+                case "7":
+                    maxwell();
+                    break;
+                case "8":
+                    monkeyspin();
+                case "k":
                     setup();
                     break;
                 default:
