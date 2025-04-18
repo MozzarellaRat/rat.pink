@@ -54,7 +54,6 @@
             aud.src = "https://rat.pink/cdn/m.mp3";
             aud.loop = false;
             e.src = "https://rat.pink/cdn/f1.gif";
-            setup();
             setTimeout(() => {
                 e.src = "https://media1.tenor.com/m/LSvaSkcz6UQAAAAd/happy-monkey-circle-happy.gif";
             }, 7400);
@@ -63,7 +62,23 @@
                 if (aud.loop === false) {
                     monkeyspin();
                 }
-            },32000)
+            }, 32000);
+
+            document.documentElement.style.height = "100%";
+            document.body.style.height = "100%";
+            document.body.style.margin = "0";
+
+            e.style.height = "100%";
+            e.style.width = "100%";
+            k.style.margin = "auto";
+            k.style.backgroundColor = "black";
+            document.body.style.overflow = "hidden";
+            if (aud.paused) {
+                let time = aud.currentTime;
+                aud.load();
+                aud.play();
+                aud.currentTime = time;
+            }
         }
 
         function maxwell() {
