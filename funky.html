@@ -57,8 +57,11 @@
             aud.loop = false;
             e.src = "https://rat.pink/cdn/f1.gif";
             setTimeout(() => {
-                e.src = "https://media1.tenor.com/m/LSvaSkcz6UQAAAAd/happy-monkey-circle-happy.gif";
-            }, 6600);
+                if (aud.loop === false) {
+                    e.src = "https://media1.tenor.com/m/LSvaSkcz6UQAAAAd/happy-monkey-circle-happy.gif";
+                }
+                
+            }, 7000);
 
             setTimeout(() => {
                 if (aud.loop === false) {
