@@ -57,14 +57,14 @@
             setup();
             setTimeout(() => {
                 e.src = "https://media1.tenor.com/m/LSvaSkcz6UQAAAAd/happy-monkey-circle-happy.gif";
-            }, 7000);
-        }
+            }, 7400);
 
-        aud.addEventListener("ended", () => {
-            if (aud.src == "https://rat.pink/cdn/m.mp3") {
-                monkeyspin();
-            }
-        });
+            setTimeout(() => {
+                if (aud.loop === false) {
+                    monkeyspin();
+                }
+            },32000)
+        }
 
         function maxwell() {
             let srcs = ["https://media.tenor.com/qqvVKCDu89cAAAAi/cat-silly.gif", "https://media.tenor.com/T8SBWIfKcFQAAAAi/maxwell-cat.gif", "https://media.tenor.com/lfcGzm0HvOgAAAAi/maxwell-the-cat.gif", "https://media1.tenor.com/m/Jojpr9QgMLoAAAAd/maxwell-maxwell-spin.gif"];
@@ -95,7 +95,6 @@
         document.addEventListener("keydown", keypress);
 
         function keypress(e) {
-            e
             switch (e.key) {
                 case "1":
                     chip();
