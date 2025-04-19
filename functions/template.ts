@@ -14,7 +14,6 @@ export function getTemplate({
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Password Protected Site</title>
       <meta name="description" content="This site is password protected.">
-      <link rel="shortcut icon" href="https://picocss.com/favicon.ico">
 
       <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 
@@ -43,10 +42,6 @@ export function getTemplate({
     <body>
       <main>
         <article>
-          <hgroup>
-            <h1>Password</h1>
-            <h2>Please enter your password for this site.</h2>
-          </hgroup>
           ${withError ? `<p class="error">Incorrect password, please try again.</p>` : ''}
           <form method="post" action="/cfp_login">
             <input type="hidden" name="redirect" value="${redirectPath}" />
