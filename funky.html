@@ -3,10 +3,45 @@
 
 <head>
     <title>Funky</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        .goup {
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: white;
+            opacity: 1;
+            animation: oe 1s ease-out forwards;
+            z-index: 1000;
+            font-family: "Pixelify Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal
+        }
+
+        @keyframes oe {
+            0% {
+                transform: translateX(-50%) translateY(0) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(-50%) translateY(-50px) scale(1.2);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <script>
+        let points = parseInt(localStorage.getItem("p")) || 0;
         let e = document.body.appendChild(document.createElement("img"));
         let k = document.body;
         let aud = new Audio("https://media.memesoundeffects.com/2023/12/funky20town20low20quality.mp3");
@@ -60,7 +95,7 @@
                 if (aud.loop === false) {
                     e.src = "https://media1.tenor.com/m/LSvaSkcz6UQAAAAd/happy-monkey-circle-happy.gif";
                 }
-                
+
             }, 7000);
 
             setTimeout(() => {
@@ -75,6 +110,15 @@
             let srcs = ["https://media.tenor.com/qqvVKCDu89cAAAAi/cat-silly.gif", "https://media.tenor.com/T8SBWIfKcFQAAAAi/maxwell-cat.gif", "https://media.tenor.com/lfcGzm0HvOgAAAAi/maxwell-the-cat.gif", "https://media1.tenor.com/m/Jojpr9QgMLoAAAAd/maxwell-maxwell-spin.gif"];
             let osrc = srcs[Math.floor(Math.random() * srcs.length)];
             e.src = osrc;
+        }
+
+        function popup(k) {
+            let ve = document.body.appendChild(document.createElement("p"))
+            ve.classList.add("goup");
+            ve.appendChild(document.createTextNode(k));
+            ve.addEventListener("animationend", () => {
+                ve.remove();
+            })
         }
 
         function setup() {
@@ -157,8 +201,18 @@
         setTimeout(() => {
             aud.load();
             aud.play();
-        }, 4000);
+        }, 10000);
 
+        setInterval(() => {
+            points += 1;
+            localStorage.setItem("p", points); // Save updated points
+
+            if (points % 10 === 0) {
+                popup(points + " !!");
+            }
+
+            popup("+1");
+        }, 500);
 
     </script>
 </body>
